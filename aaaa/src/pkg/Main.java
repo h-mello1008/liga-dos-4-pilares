@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // CORREÇÃO: Passando todos os 4 argumentos exigidos pelo construtor de SuperHeroi
         SuperHeroi heroi = new SuperHeroi("Bruce Wayne", "Batman", 1.88, Sexo.HOMEM);
 
         heroi.setIdentidadeSecreta(true);
@@ -15,7 +14,6 @@ public class Main {
         System.out.println("Identidade protegida: " + heroi.getIdentidade());
         System.out.println("Identidade revelada (forçada): " + heroi.revelarIdentidade());
 
-        // Testando a cópia defensiva de habilidades
         List<String> habilidadesExternas = heroi.getHabilidades();
         habilidadesExternas.add("Voar");
         habilidadesExternas.clear();
@@ -41,5 +39,34 @@ public class Main {
             p.agir();
             System.out.println();
         }
+
+        SuperHeroi mulherMaravilha = new SuperHeroi("Diana Prince", "Mulher-Maravilha", 1.83, Sexo.MULHER);
+        mulherMaravilha.adicionarHabilidade("Laço da Verdade");
+
+        Vilao lex = new Vilao("Lex Luthor", 1.80, Sexo.HOMEM, 7);
+        Civil enfermeira = new Civil("Alice Pemberton", 1.65, Sexo.MULHER, "Enfermeira");
+
+        Batalha batalha = new Batalha();
+        batalha.adicionar(heroi);
+        batalha.adicionar(civil);
+        batalha.adicionar(vilao);
+        batalha.adicionar(mulherMaravilha);
+        batalha.adicionar(lex);
+        batalha.adicionar(enfermeira);
+
+        batalha.iniciar();
+
+        System.out.println("--- Heróis na batalha ---");
+        for (SuperHeroi h : batalha.listarHerois()) {
+            System.out.println("- " + h.getNomeDeGuerra());
+        }
+
+        System.out.println("\n--- Participante mais alto ---");
+        System.out.println(batalha.maisAlto().getNome());
+
+        System.out.println("\n--- Removendo o Coringa ---");
+        boolean removido = batalha.removerDerrotado("Coringa");
+        System.out.println("Removido? " + removido);
+        System.out.println("Heróis após remoção: " + batalha.listarHerois().size());
     }
 }

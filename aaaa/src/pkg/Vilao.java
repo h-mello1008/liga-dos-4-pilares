@@ -11,9 +11,13 @@ public class Vilao extends Personagem {
         this.nivelDeAmeaca = nivelDeAmeaca;
     }
 
+    public int getNivelDeAmeaca() {
+        return nivelDeAmeaca;
+    }
+
     @Override
     public String apresentar() {
-        return "Eu sou " + nome + ", minha ameaça é nível " + nivelDeAmeaca + "!";
+        return "Eu sou " + getNome() + ", minha ameaça é nível " + nivelDeAmeaca + "!";
     }
 
     @Override

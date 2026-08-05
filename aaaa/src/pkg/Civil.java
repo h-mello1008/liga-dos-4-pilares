@@ -10,7 +10,7 @@ public class Civil extends Personagem {
 
     @Override
     public String apresentar() {
-        return "Olá, meu nome é " + nome + " e eu trabalho como " + profissao + ".";
+        return "Olá, meu nome é " + getNome() + " e eu trabalho como " + profissao + ".";
     }
 
     @Override

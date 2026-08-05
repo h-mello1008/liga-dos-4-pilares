@@ -2,12 +2,12 @@ package pkg;
 
 public abstract class Personagem {
 
-    protected String nome;
-    protected double altura;
-    protected Sexo sexo;
+    private String nome;
+    private double altura;
+    private Sexo sexo;
 
     public Personagem(String nome, double altura, Sexo sexo) {
-        if (nome == null) {
+        if (nome == null || nome.isBlank()) {
             throw new IllegalArgumentException("Nome não pode ser vazio.");
         }
         if (altura < 0.5 || altura > 3.0) {
@@ -16,6 +16,18 @@ public abstract class Personagem {
         this.nome = nome;
         this.altura = altura;
         this.sexo = sexo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
     }
 
     public abstract String apresentar();

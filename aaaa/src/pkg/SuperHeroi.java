@@ -24,11 +24,15 @@ public class SuperHeroi extends Personagem {
         if (this.identidadeSecreta) {
             return "??? (identidade protegida)";
         }
-        return this.nome;
+        return getNome();
     }
 
     public String revelarIdentidade() {
-        return this.nome;
+        return getNome();
+    }
+
+    public String getNomeDeGuerra() {
+        return nomeDeGuerra;
     }
 
     public boolean isIdentidadeSecreta() {
