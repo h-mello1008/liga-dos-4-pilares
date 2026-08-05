@@ -1,4 +1,4 @@
-package src.pkg;
+package pkg;
 
 public abstract class Personagem {
 
@@ -19,4 +19,11 @@ public abstract class Personagem {
     }
 
     public abstract String apresentar();
+
+    public abstract void agir();
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + ", Altura: " + altura + ", Sexo: " + sexo;
+    }
 }

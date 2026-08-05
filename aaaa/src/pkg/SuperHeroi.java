@@ -1,4 +1,4 @@
-package src.pkg;
+package pkg;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,5 +45,28 @@ public class SuperHeroi extends Personagem {
 
     public void adicionarHabilidade(String habilidade) {
         this.habilidades.add(habilidade);
+    }
+
+    @Override
+    public void agir() {
+        usarHabilidade();
+    }
+
+    public void usarHabilidade() {
+        if (!habilidades.isEmpty()) {
+            System.out.println("Usou a habilidade: " + habilidades.get(0));
+        }
+    }
+
+    public void usarHabilidade(int indice) {
+        if (indice >= 0 && indice < habilidades.size()) {
+            System.out.println("Usou a habilidade: " + habilidades.get(indice));
+        }
+    }
+
+    public void usarHabilidade(String nome) {
+        if (habilidades.contains(nome)) {
+            System.out.println("Usou a habilidade: " + nome);
+        }
     }
 }

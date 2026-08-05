@@ -1,4 +1,4 @@
-package src.pkg;
+package pkg;
 
 public class Vilao extends Personagem {
     private int nivelDeAmeaca;
@@ -14,5 +14,10 @@ public class Vilao extends Personagem {
     @Override
     public String apresentar() {
         return "Eu sou " + nome + ", minha ameaça é nível " + nivelDeAmeaca + "!";
+    }
+
+    @Override
+    public void agir() {
+        System.out.println("Atacando com força nível " + nivelDeAmeaca);
     }
 }

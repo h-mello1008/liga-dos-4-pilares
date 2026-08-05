@@ -1,4 +1,4 @@
-package src.pkg;
+package pkg;
 
 public class Civil extends Personagem {
     private String profissao;
@@ -11,5 +11,10 @@ public class Civil extends Personagem {
     @Override
     public String apresentar() {
         return "Olá, meu nome é " + nome + " e eu trabalho como " + profissao + ".";
+    }
+
+    @Override
+    public void agir() {
+        System.out.println("Socorro!");
     }
 }

@@ -1,4 +1,4 @@
-package src.pkg;
+package pkg;
 
 public enum Sexo {
     MULHER, HOMEM, OUTRO, PREFIRO_NAO_DIZER
